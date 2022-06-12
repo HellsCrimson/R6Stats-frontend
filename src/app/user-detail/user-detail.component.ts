@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
+import { User } from '../utils/user';
+import { ApiService } from '../services/api.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -8,17 +10,16 @@ import { User } from '../user';
 })
 export class UserDetailComponent implements OnInit {
 
-  user: User = {
-    id: 1,
-    username: "HellsCrimson",
-    platform: "uplay",
-    avatar: "https://ubisoft-avatars.akamaized.net/0fc0c744-b935-43fc-b860-7b34111f1473/default_tall.png",
-    stats: "json data stuff"
+  user: User;
+
+  constructor(
+    private api: ApiService,
+    private userService: UserService
+    ) {
+    this.user = userService.user;
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

@@ -1,3 +1,8 @@
 <h2>{{title}}</h2>
 <app-user-search-bar></app-user-search-bar>
-<app-user-detail></app-user-detail>
+
+<div *ngIf="user.id != 0">
+    <app-user-detail></app-user-detail>
+    <app-pvp-stats></app-pvp-stats>
+    <app-pve-stats></app-pve-stats>
+</div>

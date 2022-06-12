@@ -1,9 +1,10 @@
-<p>
-    <input type="text">
-    <select name="platform" id="platform">
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    Username: <input type="text" formControlName="username">
+    
+    Platform: <select name="platform" id="platform" formControlName="platform" [(ngModel)]="defaultPlatform">
         <option value="uplay">UPLAY</option>
         <option value="psn">PSN</option>
         <option value="xbl">XBOX</option>
     </select>
-    <input type="button" value="Confirm">
-</p>
+    <input type="button" value="Confirm" type="submit">
+</form>
