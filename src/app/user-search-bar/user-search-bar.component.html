@@ -1,8 +1,8 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     Username: <input type="text" formControlName="username">
     
-    Platform: <select name="platform" id="platform" formControlName="platform" [(ngModel)]="defaultPlatform">
-        <option value="uplay">UPLAY</option>
+    Platform: <select name="platform" id="platform" formControlName="platform">
+        <option value="uplay" selected>UPLAY</option>
         <option value="psn">PSN</option>
         <option value="xbl">XBOX</option>
     </select>

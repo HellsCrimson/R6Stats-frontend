@@ -1,9 +1,10 @@
-import { Character } from "./character";
+import { Stats } from "./stats";
 
 export interface User {
     id: number;
     username: string;
     platform: string;
     avatar: string;
-    character: Character[];
+    generalStatsPvp: Stats;
+    generalStatsPve: Stats;
   }

@@ -5,3 +5,15 @@ export interface Ability {
     icon: string;
     stats: AbilityStats[];
 }
+
+export class Ability implements Ability {
+    constructor(
+        name: string,
+        icon: string,
+        stats: AbilityStats[]
+    ) {
+        this.name = name;
+        this.icon = icon;
+        this.stats = stats;
+    }
+}

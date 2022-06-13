@@ -9,6 +9,7 @@ import { User } from './utils/user';
 })
 export class AppComponent {
   title = 'R6Stat';
+  index = 0;
 
   user: User;
 

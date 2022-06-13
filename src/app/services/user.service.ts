@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../utils/user';
+import { Stats } from '../utils/stats';
+import { Character } from '../utils/character';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,62 @@ export class UserService {
       username: '',
       platform: '',
       avatar: '',
-      character: [],
+      generalStatsPvp: new Stats(
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        '0%',
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        []
+      ),
+      generalStatsPve: new Stats(
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        '0%',
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        []
+      ),
     }
   }
 }

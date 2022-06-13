@@ -3,6 +3,13 @@
 
 <div *ngIf="user.id != 0">
     <app-user-detail></app-user-detail>
-    <app-pvp-stats></app-pvp-stats>
-    <app-pve-stats></app-pve-stats>
+    <button (click)="index = index == 0 ? 1 : 0">
+        <div #indexText>{{index == 0 ? 'PvP' : 'PvE'}}</div>
+    </button>
+    <div *ngIf="index == 0">
+        <app-pvp-stats></app-pvp-stats>
+    </div>
+    <div *ngIf="index == 1">
+        <app-pve-stats></app-pve-stats>
+    </div>
 </div>
