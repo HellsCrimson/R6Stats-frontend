@@ -1,82 +1,31 @@
-<div class="pvp-stats-container">
-    kills: {{user.generalStatsPvp.kills}} <br>
-    deaths: {{user.generalStatsPvp.deaths}} <br>
-    kd: {{user.generalStatsPvp.kd}} <br>
-    assists: {{user.generalStatsPvp.assists}} <br>
-    headshots{{user.generalStatsPvp.headshots}} <br>
-    melee kills: {{user.generalStatsPvp.meleeKills}} <br>
-    penetration kills: {{user.generalStatsPvp.penetrationKills}} <br>
-    blind kills: {{user.generalStatsPvp.blindKills}} <br>
-    dbno: {{user.generalStatsPvp.dbno}} <br>
-    dbno assists: {{user.generalStatsPvp.dbnoAssists}} <br>
-    revives: {{user.generalStatsPvp.revives}} <br>
-    wins: {{user.generalStatsPvp.wins}} <br>
-    losses: {{user.generalStatsPvp.losses}} <br>
-    win rate: {{user.generalStatsPvp.winRate}} <br>
-    matches: {{user.generalStatsPvp.matches}} <br>
-    playtime: {{user.generalStatsPvp.playtime}} <br>
-    gadgets destroyed: {{user.generalStatsPvp.gadgetsDestroyed}} <br>
-    rappel breaches: {{user.generalStatsPvp.rappelBreaches}} <br>
-    barricades deployed: {{user.generalStatsPvp.barricadesDeployed}} <br>
-    reinforcements deployed: {{user.generalStatsPvp.reinforcementsDeployed}} <br>
-    suicides: {{user.generalStatsPvp.suicides}} <br>
-    distance travelled: {{user.generalStatsPvp.distanceTravelled}} <br>
-    xp: {{user.generalStatsPvp.xp}} <br>
-</div>
-
 <div class="operator-stats-container">
     <div class="operator-stats-header">
-        <h3>Operator Stats</h3>
+        <h2>Operator Stats</h2>
     </div>
     <ul>
-        <li class="operator-stats-body" *ngFor="let operator of user.generalStatsPvp.character">
-            <div class="operator-stats-body-row">
-                <div class="operator-stats-body-row-header">
-                    <h4>Operator</h4>
+        <div class="row">
+            <li class="operator-stats-body" *ngFor="let operator of user.generalStatsPvp.character">
+                <div class="column">
+                    <div class="operator-card">
+                        <img [src]="operator.icon" [alt]="operator.name" width="150" height="150">
+                        <div class="operator-body">
+                            <h2>{{operator.name}}</h2>
+                            <p>Kills: {{operator.kills}}</p>
+                            <p>Deaths: {{operator.deaths}}</p>
+                            <p>KD: {{operator.kd}}</p>
+                            <p>Headshots: {{operator.headshots}}</p>
+                            <p>Melee Kills: {{operator.meleeKills}}</p>
+                            <p>Down But Not Out: {{operator.dbno}}</p>
+                            <p>Wins: {{operator.wins}}</p>
+                            <p>Losses: {{operator.losses}}</p>
+                            <p>Win Rate: {{operator.winRate}}</p>
+                            <p>Matches: {{operator.matches}}</p>
+                            <p>Playtime: {{operator.playtime}}</p>
+                            <p>XP: {{operator.xp}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="operator-icon">
-                    <img [src]="operator.icon" [alt]="operator.name" width="100" height="100">
-                </div>
-                <div class="operator-stats-body-row-body">
-                    <h4>Name: {{operator.name}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Kills: {{operator.kills}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Deaths: {{operator.deaths}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>KD: {{operator.kd}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Headshots: {{operator.headshots}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Melee Kills: {{operator.meleeKills}}</h4>
-                </div>                
-                <div class="operator-stats-body-row-header">
-                    <h4>DBNO: {{operator.dbno}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Wins: {{operator.wins}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Losses: {{operator.losses}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Win Rate: {{operator.winRate}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Matches: {{operator.matches}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>Playtime: {{operator.playtime}}</h4>
-                </div>
-                <div class="operator-stats-body-row-header">
-                    <h4>XP: {{operator.xp}}</h4>
-                </div>
-            </div>
-        </li>
+            </li>
+        </div>
     </ul>
 </div>

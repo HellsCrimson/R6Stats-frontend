@@ -1,10 +1,12 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-    Username: <input type="text" formControlName="username">
-    
-    Platform: <select name="platform" id="platform" formControlName="platform">
-        <option value="uplay" selected>UPLAY</option>
-        <option value="psn">PSN</option>
-        <option value="xbl">XBOX</option>
-    </select>
-    <input type="button" value="Confirm" type="submit">
-</form>
+<div class="text">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form">
+        <input class="text" type="text" formControlName="username" placeholder="Username">
+        
+        Platform: <select name="platform" id="platform" formControlName="platform" class="text">
+            <option value="uplay" selected>UPLAY</option>
+            <option value="psn">PSN</option>
+            <option value="xbl">XBOX</option>
+        </select>
+        <input class="button" type="button" value="Confirm" type="submit">
+    </form>
+</div>

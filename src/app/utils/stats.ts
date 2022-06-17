@@ -1,4 +1,4 @@
-import { Character } from "./character";
+import { Operator } from "./operator";
 
 export interface Stats {
     bulletsFired: number;
@@ -26,7 +26,7 @@ export interface Stats {
     suicides: number;
     distanceTravelled: number;
     xp: number;
-    character: Character[];
+    character: Operator[];
 }
 
 export class Stats implements Stats {
@@ -56,7 +56,7 @@ export class Stats implements Stats {
         suicides: number,
         distanceTravelled: number,
         xp: number,
-        character: Character[],
+        character: Operator[],
     ) {
         this.bulletsFired = bulletsFired;
         this.bulletsConnected = bulletsConnected;

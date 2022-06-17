@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../utils/user';
 import { Stats } from '../utils/stats';
-import { Character } from '../utils/character';
+import { Operator } from '../utils/operator';
 
 @Injectable({
   providedIn: 'root'

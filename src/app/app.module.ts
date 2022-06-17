@@ -8,6 +8,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserSearchBarComponent } from './user-search-bar/user-search-bar.component';
 import { PvpStatsComponent } from './pvp-stats/pvp-stats.component';
 import { PveStatsComponent } from './pve-stats/pve-stats.component';
+import { OverallStatsComponent } from './overall-stats/overall-stats.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PveStatsComponent } from './pve-stats/pve-stats.component';
     UserDetailComponent,
     UserSearchBarComponent,
     PvpStatsComponent,
-    PveStatsComponent
+    PveStatsComponent,
+    OverallStatsComponent
   ],
   imports: [
     BrowserModule,

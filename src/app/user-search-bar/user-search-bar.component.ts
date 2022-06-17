@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { UserService } from '../services/user.service';
-import { Character } from '../utils/character';
+import { Operator } from '../utils/operator';
 import { Stats } from '../utils/stats';
 import { User } from '../utils/user';
 import { Ability } from '../utils/ability';
@@ -86,7 +86,7 @@ export class UserSearchBarComponent implements OnInit {
     stats.xp = data.data.general.xp;
   }
 
-  getOperatorInfo(data: any, characters: Character[]) {
+  getOperatorInfo(data: any, characters: Operator[]) {
     data = data.data.operators;
     var operatorsName = [];
     for (var operator in data) {
@@ -94,7 +94,7 @@ export class UserSearchBarComponent implements OnInit {
     }
     for (var index = 0; index < operatorsName.length; index++) {
       var curOperator = data[operatorsName[index]];
-      var character = new Character(
+      var character = new Operator(
         curOperator.name,
         curOperator.role,
         curOperator.unit,

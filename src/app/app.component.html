@@ -1,10 +1,11 @@
-<h2>{{title}}</h2>
+<h2 class="title">{{title}}</h2>
 <app-user-search-bar></app-user-search-bar>
 
 <div *ngIf="user.id != 0">
     <app-user-detail></app-user-detail>
-    <button (click)="index = index == 0 ? 1 : 0">
-        <div #indexText>{{index == 0 ? 'PvP' : 'PvE'}}</div>
+    <app-overall-stats></app-overall-stats>
+    <button class="button" (click)="index = index == 0 ? 1 : 0">
+        <div style="background-color: transparent;" #indexText>{{index == 0 ? 'PvP' : 'PvE'}}</div>
     </button>
     <div *ngIf="index == 0">
         <app-pvp-stats></app-pvp-stats>

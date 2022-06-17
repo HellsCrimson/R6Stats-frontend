@@ -1,0 +1,11 @@
+.title {
+    font-size: 60px;
+    color: orange;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
