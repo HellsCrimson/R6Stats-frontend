@@ -1,4 +1,5 @@
-.pvp-stats-container, .operator-stats-container {
+.pvp-stats-container,
+.operator-stats-container {
     color: white;
     display: flex;
     flex-direction: column;
@@ -29,24 +30,28 @@ ul {
 
 /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
-.column {
-    width: 100%;
-    display: block;
-}
+    .column {
+        width: 100%;
+        display: block;
+    }
 }
 
 .operator-card {
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .operator-body {
-padding: 0 16px;
+    padding: 0 16px;
 }
 
-.operator-body::after, .row::after {
-content: "";
-clear: both;
-display: table;
+.operator-body::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .operator-stats-header {

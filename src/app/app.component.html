@@ -2,11 +2,18 @@
 <app-user-search-bar></app-user-search-bar>
 
 <div *ngIf="user.id != 0">
-    <app-user-detail></app-user-detail>
+    <div style="margin-top: 20px;">
+        <app-user-detail></app-user-detail>
+    </div>
+
     <app-overall-stats></app-overall-stats>
-    <button class="button" (click)="index = index == 0 ? 1 : 0">
-        <div style="background-color: transparent;" #indexText>{{index == 0 ? 'PvP' : 'PvE'}}</div>
-    </button>
+
+    <div class="button-container">
+        <button class="button" (click)="index = index == 0 ? 1 : 0">
+            <div style="background-color: transparent;" #indexText>{{index == 0 ? 'PvP' : 'PvE'}}</div>
+        </button>
+    </div>
+    
     <div *ngIf="index == 0">
         <app-pvp-stats></app-pvp-stats>
     </div>
