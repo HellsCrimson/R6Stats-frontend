@@ -6,6 +6,8 @@ import { Operator } from '../utils/operator';
 import { Stats } from '../utils/stats';
 import { User } from '../utils/user';
 import { Ability } from '../utils/ability';
+import { AbilityStats } from '../utils/ability_stats';
+import { GunCategory } from '../utils/guns/gun_category';
 
 @Component({
   selector: 'app-user-search-bar',
@@ -42,11 +44,17 @@ export class UserSearchBarComponent implements OnInit {
       this.api.getUserStatsPvp(this.searchForm.value).subscribe(data => {
         this.getStats(data, this.user.generalStatsPvp);
         this.getOperatorInfo(data, this.user.generalStatsPvp.character);
+        this.getWeaponInfo(data, this.user.generalStatsPvp.guns);
+        this.getQueuesInfo();
+        this.getModesInfo();
       })
 
       this.api.getUserStatsPve(this.searchForm.value).subscribe(data => {
         this.getStats(data, this.user.generalStatsPve);
         this.getOperatorInfo(data, this.user.generalStatsPve.character);
+        this.getWeaponInfo(data, this.user.generalStatsPve.guns);
+        this.getQueuesInfo();
+        this.getModesInfo();
       })
     }
   }
@@ -111,13 +119,36 @@ export class UserSearchBarComponent implements OnInit {
         curOperator.dbno,
         curOperator.xp,
         curOperator.playtime,
-        this.getAbility(),
+        this.getAbility(curOperator.uniqueAbility),
       );
       characters.push(character);
     }
   }
 
-  getAbility() {
-    return new Ability('', '', []);
+  getAbility(ability: any) {
+    let newAbility = new Ability('', '', []);
+
+    if (ability != null)
+    {
+      newAbility.name = ability.name;
+      newAbility.icon = ability.icon;
+
+      for (var index in ability.stats)
+      {
+        newAbility.stats.push(new AbilityStats(ability.stats[index].name, ability.stats[index].value))
+      }
+    }
+    
+    return newAbility;
+  }
+
+  getWeaponInfo(data: any, guns: GunCategory[]) {
+    // Get all categories + get all guns in category
+  }
+
+  getQueuesInfo() {
+  }
+
+  getModesInfo() {
   }
 }

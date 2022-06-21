@@ -22,6 +22,19 @@
                             <p>Matches: {{operator.matches}}</p>
                             <p>Playtime: {{operator.playtime}}</p>
                             <p>XP: {{operator.xp}}</p>
+                            <div *ngIf="operator.uniqueAbility.name != ''">
+                                <ul class="ability-card">
+                                    <li>
+                                        <img [src]="operator.uniqueAbility.icon">
+                                        <p>{{operator.uniqueAbility.name}}</p>
+                                        <ul class="ability-stats-card">
+                                            <li *ngFor="let stats of operator.uniqueAbility.stats">
+                                                <p>{{stats.name}}: {{stats.value}}</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
