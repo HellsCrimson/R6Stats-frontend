@@ -8,6 +8,7 @@ import { User } from '../utils/user';
 import { Ability } from '../utils/ability';
 import { AbilityStats } from '../utils/ability_stats';
 import { GunCategory } from '../utils/guns/gun_category';
+import { Weapon } from '../utils/guns/weapon';
 
 @Component({
   selector: 'app-user-search-bar',
@@ -143,7 +144,37 @@ export class UserSearchBarComponent implements OnInit {
   }
 
   getWeaponInfo(data: any, guns: GunCategory[]) {
-    // Get all categories + get all guns in category
+    data = data.data.weapons;
+    for (var category in data)
+    {
+      let newGunCategory = new GunCategory();
+      newGunCategory.name = ((data[category])['general']).name;
+      newGunCategory.kills = ((data[category])['general']).kills;
+      newGunCategory.deaths = ((data[category])['general']).deaths;
+      newGunCategory.kd = ((data[category])['general']).kd;
+      newGunCategory.headshots = ((data[category])['general']).headshots;
+      newGunCategory.bulletsFired = ((data[category])['general']).bulletsFired;
+      newGunCategory.bulletsConnected = ((data[category])['general']).bulletsConnected;
+      newGunCategory.timesChosen = ((data[category])['general']).timesChosen;
+
+      for (var weapon in (data[category])['list'])
+      {
+        let gun = new Weapon();
+        gun.name = (((data[category])['list'])[weapon]).name;
+        gun.icon = (((data[category])['list'])[weapon]).icon;
+        gun.kills = (((data[category])['list'])[weapon]).kills;
+        gun.deaths = (((data[category])['list'])[weapon]).deaths;
+        gun.kd = (((data[category])['list'])[weapon]).kd;
+        gun.headshots = (((data[category])['list'])[weapon]).headshots;
+        gun.bulletsFired = (((data[category])['list'])[weapon]).bulletsFired;
+        gun.bulletsConnected = (((data[category])['list'])[weapon]).bulletsConnected;
+        gun.timesChosen = (((data[category])['list'])[weapon]).timesChosen;
+        
+        newGunCategory.guns.push(gun);
+      }
+
+      guns.push(newGunCategory);
+    }
   }
 
   getQueuesInfo() {

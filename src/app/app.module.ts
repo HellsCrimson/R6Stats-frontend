@@ -9,6 +9,7 @@ import { UserSearchBarComponent } from './user-search-bar/user-search-bar.compon
 import { PvpStatsComponent } from './pvp-stats/pvp-stats.component';
 import { PveStatsComponent } from './pve-stats/pve-stats.component';
 import { OverallStatsComponent } from './overall-stats/overall-stats.component';
+import { WeaponPvpStatsComponent } from './weapon-pvp-stats/weapon-pvp-stats.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OverallStatsComponent } from './overall-stats/overall-stats.component';
     UserSearchBarComponent,
     PvpStatsComponent,
     PveStatsComponent,
-    OverallStatsComponent
+    OverallStatsComponent,
+    WeaponPvpStatsComponent
   ],
   imports: [
     BrowserModule,
